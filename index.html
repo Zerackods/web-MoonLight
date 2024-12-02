@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Light</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="img/stars.png" alt="stars" id="stars">
+        <img src="img/moon.png" alt="moon" id="moon">
+        <img src="img/mountains_behind.png" alt="mountains_behind" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="img/mountains_front.png" alt="mountains_front" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <div class="contenedor">
+            <!--Parallax Scrolling Effects-->
+            <h2></h2>
+            <p>
+            In astronomy, the full moon is the phase of the Moon when its visible hemisphere is fully illuminated from
+            the Earth. The full moon occurs when our planet is positioned exactly between the Sun and the Moon. The Moon,
+            as such, has no light of its own, so it reflects the light of the Sun. That is why, during the full moon,
+            what we see is the Moon with its visible face fully illuminated by sunlight. The Moon makes an orbital path
+            around the planet Earth that lasts 27.3 days, which is known as the lunar cycle or sidereal month.
+            </p>
+
+            <p>Due to the Earth's translational motion around the Sun, the Moon requires approximately two more days to be
+            positioned in front of the Sun with the Earth in between. This means that full moons occur every 28.531
+            days, known as a synodic month. Each full moon can last approximately one full night.
+            As such, the full moon marks the middle of the lunar month, which in turn is made up of four phases known as
+            the new moon, crescent, full moon and waning quarter. It is during the full moon that lunar eclipses occur.</p>
+                
+            <p>Popularly, there is a set of beliefs associated with the full moon. It is said, for example, that our
+            behavior is altered, that criminality goes up, and that traffic accidents and childbirths increase.
+            Also, some claim that during full moons people are more prone to insomnia and dementia (lunatics). Another
+            popular belief is that of lycanthropy, or the transformation of a man into a wolf, which is said to occur on
+            full moon nights. However, it is important to emphasize that all these are just popular beliefs, with no
+            scientific basis.</p>
+            
+        </div>
+    </div>
+    <script>
+        let star = document.getElementById('stars')
+        let moon = document.getElementById('moon')
+        let mountains_behind = document.getElementById('mountains_behind')
+        let text = document.getElementById('text')
+        let btn = document.getElementById('btn')
+        let mountains_front = document.getElementById('mountains_front')
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            star.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+
+</html>
